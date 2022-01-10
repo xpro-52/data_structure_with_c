@@ -25,7 +25,7 @@ int sizeQueue(Queue *q) {
     return sizeLinkedList(q->linkedlist);
 }
 
-void printQueue(Queue *q) {
-    printLinkedList(q->linkedlist);
+char *toStringQueue(Queue *q) {
+    return toStringLinkedList(q->linkedlist);
 }
 

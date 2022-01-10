@@ -15,6 +15,6 @@ int pop(Stack *s);
 
 int sizeStack(Stack *s);
 
-void printStack(Stack *s);
+char *toStringStack(Stack *s);
 
 #endif

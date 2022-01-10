@@ -20,7 +20,7 @@ void inorder(Entry *root, LinkedList *list);
 
 int treesize(BST *tree);
 
-void printTree(BST *tree);
+char *toStringTree(BST *tree);
 
 void removeEntry(BST *tree, int key);
 

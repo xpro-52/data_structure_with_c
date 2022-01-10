@@ -11,6 +11,6 @@ void enq(Queue *q, int data);
 int deq(Queue *q);
 
 int sizeQueue(Queue *q);
-void printQueue(Queue *q);
+char *toStringQueue(Queue *q);
 
 #endif

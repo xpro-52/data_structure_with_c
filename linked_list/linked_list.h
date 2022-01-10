@@ -20,6 +20,6 @@ int removeLinkedLast(LinkedList *list);
 
 int sizeLinkedList(LinkedList *list);
 
-void printLinkedList(LinkedList *list);
+char *toStringLinkedList(LinkedList *list);
 
 #endif

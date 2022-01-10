@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <stdlib.h>
 #include "binary_search_tree.h"
 
 
@@ -10,12 +10,16 @@ void test() {
         put(bst, data[i], data[i]);
     
     printf("--- init ---\n");
-    printTree(bst);
+    char *str = toStringTree(bst);
+    printf("%s\n", str);
+    free(str);
 
     for (int i = 0; i < 7; i++) {
         printf("--- remove %d ---\n", data[i]);
         removeEntry(bst, data[i]);
-        printTree(bst);
+        char* str = toStringTree(bst);
+        printf("%s\n", str);
+        free(str);
     }
     
 }
@@ -27,7 +31,3 @@ int main(void) {
     
     return 0;
 }
-
-/*
-gcc -o tester tester.c .\binary_search_tree.c ..\linked_list\linked_list.c; .\tester.exe
-*/

@@ -79,7 +79,7 @@ Entry *__removeEntry(Entry *e, int key) {
         e->left = __removeEntry(e->left, key);
     else
         e->right = __removeEntry(e->right, key);
-
+    return e;
 }
 
 Entry *__maxEntry(Entry *e) {
@@ -129,11 +129,12 @@ int treesize(BST *tree) {
     return tree->size;
 }
 
-void printTree(BST *tree) {
+char *toStringTree(BST *tree) {
     LinkedList *list = newLinkedList();
     inorder(tree->root, list);
-    printLinkedList(list);
+    char *string = toStringLinkedList(list);
     delLinkedList(list);
+    return string;
 }
 
 

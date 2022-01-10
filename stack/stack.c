@@ -26,6 +26,6 @@ int sizeStack(Stack *s) {
     return sizeLinkedList(s->linkedList);
 }
 
-void printStack(Stack *s) {
-    printLinkedList(s->linkedList);
+char *toStringStack(Stack *s) {
+    return toStringLinkedList(s->linkedList);
 }

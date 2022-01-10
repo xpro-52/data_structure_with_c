@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 #include "linked_list.h"
+#include "../string_builder.h"
 
 
 typedef struct node {
@@ -15,6 +16,7 @@ Node *newNode(int value, Node *prev, Node *next) {
     new->next = next;
     new->prev = prev;
     new->v = value;
+    return new;
 }
 
 
@@ -34,9 +36,9 @@ LinkedList *newLinkedList() {
 
 void delLinkedList(LinkedList *list) {
     for (Node *iter = list->first; iter != NULL;) {
-        Node *next = iter->next;
-        free(iter);
-        iter = next;
+        Node *curr = iter;
+        iter = iter->next;
+        free(curr);
     }
     free(list);
 }
@@ -106,22 +108,16 @@ int sizeLinkedList(LinkedList *list) {
     return list->size;
 }
 
-void printLinkedList(LinkedList *list) {
-    if (list->size == 0) {
-        printf("[]\n");
-        return;
+char *toStringLinkedList(LinkedList *list) {
+    StringBuilder *sb = newStringBuilder();
+    appendSB(sb, "[");
+    appendSB(sb, " ");
+    for (Node *iter = list->first; iter != NULL; iter = iter->next) {
+        char v_str[256];
+        sprintf(v_str, "%d", iter->v);
+        appendSB(sb, v_str);
+        appendSB(sb, " ");
     }
-    printf("[");
-    for (Node *iter = list->first; ; iter = iter->next) {
-        printf("%d", iter->v);
-        if (iter->next == NULL) {
-            printf("]\n");
-            return;
-        }
-        printf(", ");
-    }
+    appendSB(sb, "]");
+    return toString(sb);
 }
-
-// char *toString(LinkedList *list) {
-//     char *string;
-// }

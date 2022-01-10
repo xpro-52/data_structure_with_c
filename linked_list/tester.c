@@ -20,13 +20,9 @@ int test() {
 int main(void) {
     
     if (test())
-        printf("Success");
+        printf("Success\n");
     else
-        printf("Failure");
+        printf("Failure\n");
     
     return 0;
 }
-
-/*
-gcc -o tester tester.c .\linked_list.c; .\tester.exe
-*/

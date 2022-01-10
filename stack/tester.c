@@ -23,13 +23,9 @@ int test() {
 int main(void) {
     
     if (test())
-        printf("Success");
+        printf("Success\n");
     else
-        printf("Failure");
+        printf("Failure\n");
 
     return 0;
 }
-
-/*
-gcc -o tester tester.c .\stack.c ..\linked_list\linked_list.c; .\tester.exe  
-*/
