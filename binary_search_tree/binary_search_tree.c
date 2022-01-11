@@ -26,7 +26,7 @@ typedef struct bst {
 } BST;
 
 BST *newBST() {
-    BST *tree = malloc(sizeof(BST));
+    BST *tree = (BST *)malloc(sizeof(BST));
     tree->root = NULL;
     tree->size = 0;
     return tree;

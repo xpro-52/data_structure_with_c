@@ -8,7 +8,7 @@ typedef struct queue {
 } Queue;
 
 Queue *newQueue() {
-    Queue *q = malloc(sizeof(Queue));
+    Queue *q = (Queue *)malloc(sizeof(Queue));
     q->linkedlist = newLinkedList();
     return q;
 }

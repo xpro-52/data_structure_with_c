@@ -12,7 +12,7 @@ typedef struct node {
 } Node;
 
 Node *newNode(int value, Node *prev, Node *next) {
-    Node *new = malloc(sizeof(Node));
+    Node *new = (Node *)malloc(sizeof(Node));
     new->next = next;
     new->prev = prev;
     new->v = value;
@@ -27,7 +27,7 @@ typedef struct linkedList {
 } LinkedList;
 
 LinkedList *newLinkedList() {
-    LinkedList *list = malloc(sizeof(LinkedList));
+    LinkedList *list = (LinkedList *)malloc(sizeof(LinkedList));
     list->first = NULL;
     list->last = NULL;
     list->size = 0;
